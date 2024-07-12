@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import logoImg from "./assets/logo.png";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <main className="container">
+        <img
+          src={logoImg}
+          className="logo"
+          alt="Logo da calculadora de gasolina ou alcool"
+        />
+        <h1 className="title">Qual a melhor opção?</h1>
+        <form className="form">
+          <label htmlFor="alcool">Álcool (preço por litro):</label>
+          <input
+            type="number"
+            id="alcool"
+            className="input"
+            placeholder="4,90"
+            min="1"
+            step="0.01"
+            required
+          />
+          <label htmlFor="gasolina">Gasolina (preço por litro):</label>
+          <input
+            type="number"
+            id="gasolina"
+            className="input"
+            placeholder="4,90"
+            min="1"
+            step="0.01"
+            required
+          />
+          <input className="button" type="submit" value="Calcular" />
+        </form>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
